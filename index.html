@@ -5,16 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <input id="tarefa" type="text" placeholder="Insira aqui sua tarefa"></input>
-    <input id= "seleciona-data" type="date" />
-    <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
-    <div id="lista-de-tarefas"></div>
+    <h1>Lista de Tarefas</h1>    
+    <div id="ilha-de-botoes">
+        <input id="tarefa" type="text" placeholder="Insira aqui sua tarefa"></input>
+        <input id= "seleciona-data" type="date" />
+        <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
+        <div id="lista-de-tarefas"></div>
+    </div>
+
     <script>
         //MVC -> Modelagem, Visualização, Controle
         //Seção de modelagem ()
+
         let afazeres;
         const afazeresSalvos = JSON.parse(localStorage.getItem("afazeres"));
         if (Array.isArray(afazeresSalvos)) {
@@ -57,6 +63,7 @@
                 (tarefa) => {
                     const elemento = document.createElement("div");
                     elemento.innerHTML = tarefa.nome + " " + tarefa.data;
+                    elemento.className = "elemento"
 
                     const botaoApagar = document.createElement("button");
                     botaoApagar.innerHTML = "Apagar";
@@ -70,6 +77,7 @@
                 }
             );
         }
+        
 
         const adicionarTarefa = () => {
             const campoTarefa = document.getElementById("tarefa");

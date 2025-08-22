@@ -15,20 +15,46 @@ h1 {
     margin-bottom: 20px;
 }
 
-input, button {
+input {
     font-family: "Gamja Flower", sans-serif;
     font-size: 17px;
     margin-bottom: 16px;
     border-radius: 10px;
     padding: 5px;
+    box-shadow: 2px 2px 4px gray;
+}
+
+button {
+    font-family: "Gamja Flower", sans-serif;
+    font-size: 17px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    padding: 5px;   
+    font-weight: 90;
+    box-shadow: 2px 2px 4px gray;
+    color: green;
+}
+
+button:hover{
+     filter: brightness(0.85);
+     color:  green;
+     cursor: pointer;
+}
+
+.botaoApagar{
+    color: rgb(255, 64, 64);
+}
+
+.botaoApagar:hover{
+     filter: brightness(0.85);
+     color: red;
+     cursor: pointer;
 }
 
 .elemento{
     font-size: 23px;
     margin: 5px;
-    padding: 1px;
+    margin-top: 15px;
+    padding: 2px;
     border-bottom: 2px dashed #ccc;
 }
-
-
-
